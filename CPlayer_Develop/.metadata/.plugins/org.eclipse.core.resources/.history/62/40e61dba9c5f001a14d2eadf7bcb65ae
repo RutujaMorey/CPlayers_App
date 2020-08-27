@@ -1,0 +1,21 @@
+package com.stackroute.userservice.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class AuthenticatedUser {
+	private Long id;
+	
+	
+	@Column(name= "userName")
+	private String userName;
+	
+	@Column(name =" password")
+	private String password;
+	
+
+}

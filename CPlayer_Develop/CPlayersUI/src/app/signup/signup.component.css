@@ -1,0 +1,32 @@
+
+/* .container-style { 
+    background-image: url("/assets/ICC-Cricket-World-Cup-CS-_8.png");  
+      padding: 25px;  
+     overflow-block: hidden;  
+     height: 94.8%;    
+    background-repeat: no-repeat;   
+     background-size: 100% 100;
+}
+    
+.login-form-style {    text-align: center;    margin-top: 346px;}.field-width {    width: 201px;}  */
+.container-style {
+    padding: 2%;
+    overflow: hidden;
+    height: 100;
+   
+}
+.login-form-style {
+    text-align: center;
+     width: 40%;
+     height: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-left: 30%;
+
+}
+.form-border-style {
+    border: 1px solid #3f51b5;
+}
+.field-width {
+    width: 20%;
+}

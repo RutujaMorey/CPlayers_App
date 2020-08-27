@@ -1,0 +1,9 @@
+1583487151368	Copy package
+1583487162400	Rename package 'com.stackroute.userservice.controller'
+1583487189339	Copy package
+1583487225429	Copy package
+1583487246240	Copy packages
+1583493183675	Rename resource 'application.properties'
+1583493450568	Rename package 'com.stackroute.userservice.dto'
+1583494377342	Rename type 'UserDetailsService'
+1583494782991	Encapsulate field 'userName'

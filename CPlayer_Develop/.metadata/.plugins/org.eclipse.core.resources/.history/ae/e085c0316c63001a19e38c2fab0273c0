@@ -1,0 +1,5 @@
+package com.stackroute.favouriteservice.exceptionhandlers;
+
+public class ResourceNotFoundException extends Exception{
+
+}

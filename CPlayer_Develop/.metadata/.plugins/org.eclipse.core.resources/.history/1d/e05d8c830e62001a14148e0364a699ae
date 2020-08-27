@@ -1,0 +1,65 @@
+package com.stackroute.favouriteservice.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
+
+import com.stackroute.favouriteservice.dto.UserFavouritePlayerDTO;
+import com.stackroute.favouriteservice.entity.UserFavouritePlayerEntity;
+import com.stackroute.favouriteservice.repositories.UserFavouritePlayersRepository;
+
+@Service
+public class UserFavouritePlayersService {
+
+	@Autowired
+	private UserFavouritePlayersRepository userFavouritePlayersRepository;
+	List<UserFavouritePlayerEntity> updatedFavouriteList = new ArrayList<>();
+
+	public List<UserFavouritePlayerEntity> addFavouritePlayersToList(UserFavouritePlayerDTO userFavouritePlayerDTO) {
+		UserFavouritePlayerEntity userFavouritePlayerEntity = new UserFavouritePlayerEntity(
+				userFavouritePlayerDTO.getId(), userFavouritePlayerDTO.getPid());
+
+		List<UserFavouritePlayerEntity> savedUserFavoritePlayersList = userFavouritePlayersRepository
+				.findAllById(userFavouritePlayerDTO.getId());
+		if (CollectionUtils.isEmpty(savedUserFavoritePlayersList)) {
+			updatedFavouriteList.add(userFavouritePlayerEntity);
+		} else {
+			savedUserFavoritePlayersList.add(userFavouritePlayerEntity);
+			updatedFavouriteList.addAll(savedUserFavoritePlayersList);
+		}
+		return (List<UserFavouritePlayerEntity>) userFavouritePlayersRepository.saveAll(updatedFavouriteList);
+	}
+
+	public List<UserFavouritePlayerEntity> deleteFavouritePlayersToList(UserFavouritePlayerDTO userFavouritePlayerDTO) {
+		UserFavouritePlayerEntity userFavouritePlayerEntity = new UserFavouritePlayerEntity(
+				userFavouritePlayerDTO.getId(), userFavouritePlayerDTO.getPid());
+
+		UserFavouritePlayerEntity userFavouriteToDelete = userFavouritePlayersRepository
+				.findByIdAndPid(userFavouritePlayerDTO.getId(), userFavouritePlayerDTO.getPid());
+		if (ObjectUtils.isEmpty(userFavouriteToDelete)) {
+			return null;
+		} else {
+			return userFavouritePlayersRepository.delete(userFavouriteToDelete);
+		}
+	}
+
+	public List<UserFavouritePlayerEntity> updateFavouritePlayersToList(UserFavouritePlayerDTO userFavouritePlayerDTO) {
+		UserFavouritePlayerEntity userFavouritePlayerEntity = new UserFavouritePlayerEntity(
+				userFavouritePlayerDTO.getId(), userFavouritePlayerDTO.getPid());
+
+		List<UserFavouritePlayerEntity> savedUserFavoritePlayersList = userFavouritePlayersRepository
+				.findAllById(userFavouritePlayerDTO.getId());
+		if (CollectionUtils.isEmpty(savedUserFavoritePlayersList)) {
+			updatedFavouriteList.add(userFavouritePlayerEntity);
+		} else {
+			savedUserFavoritePlayersList.add(userFavouritePlayerEntity);
+			updatedFavouriteList.addAll(savedUserFavoritePlayersList);
+		}
+		return (List<UserFavouritePlayerEntity>) userFavouritePlayersRepository.saveAll(updatedFavouriteList);
+	}
+
+}

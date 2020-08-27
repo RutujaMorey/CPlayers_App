@@ -1,0 +1,5 @@
+package com.stackroute.favouriteservice.controllers;
+
+public class FavouritePlayersController {
+
+}

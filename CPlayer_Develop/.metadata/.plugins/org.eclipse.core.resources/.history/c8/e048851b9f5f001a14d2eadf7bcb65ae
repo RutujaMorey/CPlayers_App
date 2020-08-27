@@ -1,0 +1,9 @@
+package com.stackroute.userservice.dto;
+
+public class UserDTO {
+	
+	private String userName;
+	private String password;
+	
+
+}

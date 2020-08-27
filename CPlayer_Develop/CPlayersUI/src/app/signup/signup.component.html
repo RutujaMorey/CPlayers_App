@@ -1,0 +1,29 @@
+<div class="container-style">
+  <form [formGroup]="signupForm" class="login-form-style" (ngSubmit)="signupForm.valid">
+    <div class="form-border-style">
+      <div>
+        <mat-form-field class="field-width">
+          <input id="firstName" matInput formControlName="firstName" placeholder="First Name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field-width">
+          <input id="lastName" matInput formControlName="lastName" placeholder="Last Name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field-width">
+          <input id="emailaddress" matInput formControlName="emailaddress" placeholder="Email" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input id="password" matInput formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'" />
+          <mat-icon matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility' : 'visibility_off'}} </mat-icon>
+        </mat-form-field>
+      </div>
+      <button mat-button type="submit" class="mat-raised-button mat-primary" [disabled]="!signupForm.valid" (click)="onRegister()">Register</button>
+    </div>
+  </form>
+</div>

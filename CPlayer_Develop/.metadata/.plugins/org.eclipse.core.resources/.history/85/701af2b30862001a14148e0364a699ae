@@ -1,0 +1,12 @@
+package com.stackroute.favouriteservice.dto;
+
+import lombok.Data;
+
+@Data
+public class UserFavouritePlayerDTO {
+	
+	private Integer pid;
+	
+	private Integer id;
+
+}

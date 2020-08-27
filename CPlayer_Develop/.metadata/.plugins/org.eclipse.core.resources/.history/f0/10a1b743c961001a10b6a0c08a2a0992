@@ -1,0 +1,14 @@
+package com.stackroute.userservice.dto;
+
+import java.io.Serializable;
+
+public class AuthenticatedUserResponse implements Serializable{
+	private final String authenticationToken;
+
+	public String getAuthenticationToken() {
+		return authenticationToken;
+	}
+	
+	
+
+}

@@ -1,0 +1,6 @@
+package com.stackroute.favouriteservice.repositories;
+
+@Repository
+public interface UserFavouritePlayersRepository {
+
+}

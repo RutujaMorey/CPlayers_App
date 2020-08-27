@@ -1,0 +1,67 @@
+<mat-form-field class="example-form-field search-style">
+
+  <mat-label>
+    <mat-icon>search</mat-icon>Search by Player Name</mat-label>
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Search">
+  </button>
+  <input #searchInput (keyup)="searchPlayerByName()" matInput type="text" [(ngModel)]="playerName">
+  <button mat-button *ngIf="playerName" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<div class="no-results-img" *ngIf="players?.length === 0">
+  <img src="assets/NoSearchResultsFound.jpg">
+</div>
+<div *ngFor="let player of players">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="ptitle-style">
+          {{player.name}}
+        </mat-panel-title>
+        <span *ngIf=!player.isFavourite>
+          <button mat-raised-button matTooltip="Add to Favourites" class="tooltip-button" matTooltipClass="tooltip-style" matSuffix
+            mat-icon-button aria-label="Clear" (click)="addToFavourites(player.pid, player.name)">
+            <mat-icon>playlist_add</mat-icon>
+          </button>
+        </span>
+        <span *ngIf=player.isFavourite>
+          <button mat-raised-button matTooltip="Your Favourite" class="tooltip-button" matTooltipClass="tooltip-style" matSuffix mat-icon-button
+            aria-label="Clear" disabled>
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </span>
+        <button mat-raised-button matTooltip="Delete from My Favourites" disabled="!player.isFavourite" class="tooltip-button " matTooltipClass="tooltip-style "
+          matSuffix mat-icon-button aria-label="Clear " (click)="deleteFromFavourites(player.pid,
+          player.name) ">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </mat-expansion-panel-header>
+      <div>
+        <img class="image-style " src="{{player.image}} " altsrc="assets/BatsmanDefaultProfile.jpg " alt="No image available ">
+      </div>
+      <ul>
+        <span class="profile-style ">
+          <li>
+            <span class="pf-details-style ">Full Name: {{player.fullName}} </span>
+          </li>
+          <li>
+            <span class="pf-details-style ">Born: {{player.born}} </span>
+          </li>
+          <li>
+            <span class="pf-details-style ">Current Age: {{player.currentAge}} </span>
+          </li>
+          <li>
+            <span class="pf-details-style ">Country {{player.country}} </span>
+          </li>
+          <li>
+            <span class="pf-details-style ">Batting Style: {{player.battingStyle}} </span>
+          </li>
+          <li>
+            <span class="pf-details-style ">Bowling Style: {{player.battingStyle}} </span>
+          </li>
+        </span>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

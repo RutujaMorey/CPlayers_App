@@ -1,0 +1,7 @@
+package com.cplayers.zuul.filters;
+
+import com.netflix.zuul.ZuulFilter;
+
+public class RoutingFilter extends ZuulFilter{
+
+}

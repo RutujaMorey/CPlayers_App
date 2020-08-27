@@ -1,0 +1,8 @@
+package com.stackroute.favouriteservice.repositories;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserFavouritePlayersRepository {
+
+}

@@ -1,0 +1,49 @@
+.example-form-field {
+  width: 200%;
+}
+.search-style {
+    text-align: center;
+     width: 300px;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+.ptitle-style {
+  font-weight: bolder;
+  color: #3f51b5;
+  font-style: italic;
+  font-size: large;
+}
+.image-style{
+    float: left;
+    width: 5%;
+    margin-right: 3%;
+    border-radius: 35%;
+}
+
+.image-style:before {
+  float: left;
+    width: 5%;
+    margin-right: 3%;
+    border-radius: 35%;
+background-image: url('/BatsmanDefaultProfile.jpg');
+}
+.profile-style {
+  /* float: center; */
+}
+/* .tooltip-button {
+  margin: 16px;
+} */
+.no-results-img{
+  float:center;
+}
+.tooltip-style {
+  background: #b71c1c;
+  /* margin: 2%; */
+}
+
+.pf-details-style{
+  font-weight: bolder;
+  color: #6577df;
+  font-size: medium;
+}

@@ -1,0 +1,23 @@
+{
+    "/api/crickapi/**": {
+        "target": "https://cricapi.com/api/",
+        "secure": true,
+        "pathRewrite": {
+            "^/api/crickapi": ""
+        }
+    },
+    "/api/favouriteplayers/**": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "pathRewrite": {
+            "^/api/favouriteplayers": ""
+        }
+    },
+    "/api/userservice/**": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "pathRewrite": {
+            "^/api/userservice": ""
+        }
+    }
+}

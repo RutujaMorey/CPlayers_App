@@ -1,0 +1,11 @@
+package com.stackroute.userservice.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.stackroute.userservice.entity.AuthenticatedUsers;
+import com.stackroute.userservice.entity.NewUserEntity;
+
+public interface NewUserRepository extends CrudRepository<NewUserEntity, Integer>{
+	
+	AuthenticatedUsers findByUsername(String username);
+}

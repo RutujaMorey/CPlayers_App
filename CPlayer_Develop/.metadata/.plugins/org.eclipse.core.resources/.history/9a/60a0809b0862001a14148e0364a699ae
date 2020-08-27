@@ -1,0 +1,10 @@
+package com.stackroute.favouriteservice.dto;
+
+
+public class UserFavouritePlayerDTO {
+	
+	private Integer pid;
+	
+	private Integer id;
+
+}

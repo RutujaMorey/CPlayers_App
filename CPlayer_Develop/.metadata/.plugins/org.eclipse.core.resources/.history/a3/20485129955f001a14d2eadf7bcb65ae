@@ -1,0 +1,5 @@
+package com.cplayers.zuul.filters;
+
+public class ErrorFilter {
+
+}

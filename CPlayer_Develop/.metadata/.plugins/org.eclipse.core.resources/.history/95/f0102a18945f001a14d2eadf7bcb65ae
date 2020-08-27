@@ -1,0 +1,12 @@
+zuul:
+  routes:
+    cplayers:
+      url: http://localhost:8090
+
+ribbon:
+  eureka:
+    enabled: false
+ 
+
+server: 
+  port: 8080

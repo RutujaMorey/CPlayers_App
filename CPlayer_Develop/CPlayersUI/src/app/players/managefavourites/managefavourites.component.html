@@ -1,0 +1,20 @@
+<br>
+
+<div class="search-style">
+  <mat-label class="ptitle-style">Your Favouite Player List</mat-label>
+  <div *ngFor="let player of favouriteList" class="divider-style">
+    <mat-list>
+      <mat-list-item>
+        <mat-icon class="fav-icon-style">favorite</mat-icon>
+        <span class="delete-icon-style">
+          <button mat-raised-button matTooltip="Delete from My Favourites" matTooltipClass="tooltip-style " matSuffix mat-icon-button
+            aria-label="Clear " (click)="deleteFromFavourites(player.pid, player.name) ">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </span>
+        <span class="pf-details-style">{{player.pname}}</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div>
+</div>

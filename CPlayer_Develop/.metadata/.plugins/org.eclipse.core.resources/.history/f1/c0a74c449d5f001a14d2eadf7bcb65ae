@@ -1,0 +1,5 @@
+package com.stackroute.userservice.configuration;
+
+public class WebSecurityConfiguration {
+
+}

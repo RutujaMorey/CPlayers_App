@@ -1,0 +1,5 @@
+package com.stackroute.favouriteservice.entity;
+
+public class UserFavouritePlayerEntity {
+
+}

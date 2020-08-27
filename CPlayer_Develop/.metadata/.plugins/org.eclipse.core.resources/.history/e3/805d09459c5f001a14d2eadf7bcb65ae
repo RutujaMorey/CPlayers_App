@@ -1,0 +1,15 @@
+package com.stackroute.userservice.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class AuthenticatedUser {
+	
+	@Column(name= "userName")
+	private String userName;
+	
+	@Column(name =" password")
+	private String password;
+	
+
+}

@@ -1,0 +1,13 @@
+package com.stackroute.favouriteservice.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name= "")
+public class UserFavouritePlayerEntity {
+
+}

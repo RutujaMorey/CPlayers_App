@@ -1,0 +1,53 @@
+package com.stackroute.userservice.filters;
+
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.stackroute.userservice.services.CplayersUserDetailsService;
+import com.stackroute.userservice.services.TokenGeneratorUtil;
+
+@Component
+public class RequestFilter extends OncePerRequestFilter {
+	
+	@Autowired
+	private TokenGeneratorUtil  tokenGeneratorUtil;
+	
+	private CplayersUserDetailsService cplayersUserDetailsService;
+
+	@Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+			throws ServletException, IOException {
+		String token ="";
+		String userName = "";
+		String authorizationHeader = request.getHeader("Authorization");
+		if (!StringUtils.isEmpty(authorizationHeader) && authorizationHeader.startsWith("Bearer ")) {
+			 token = authorizationHeader.substring(7);
+			String userName = tokenGeneratorUtil.getUsernameFromToken(jwtToken);
+
+		} else {
+			logger.warn("Authorization header dosen't start with Beare");
+		}
+	
+	if(StringUtils.isBlank(userName) && SecurityContextHoleder.getContext().getauthentication() == null) {
+		UserDetails userDetails = this.cplayersUserDetailsService.loadUserByUIsername(userName);
+		if(tokenGeneratorUtil.validateToken(token, userDetails)) {
+			UsernamePasswordAuthenticationToken userNamePassw = new UsernamePasswordAuthenticationToken(principal, credentials)
+					userNamePassw.setDetails(details);
+			SecurityContextHolder.getContext().setAuthentication(userNamePassw);
+		}
+	}
+	chain.doFilter(request, response);
+
+}

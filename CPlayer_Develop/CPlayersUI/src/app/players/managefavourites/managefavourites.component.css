@@ -1,0 +1,29 @@
+
+.search-style {
+    margin-left: 40%;
+     width: 20%;
+    margin-top: 10%;
+    /* margin-left: 40%; */
+}
+.pf-details-style{
+  font-weight: bolder;
+  color: #6577df;
+  font-size: medium;
+}
+.fav-icon-style {
+    color: red;
+    margin: 1%;
+}
+.delete-icon-style {
+   margin: 2%;
+}
+.ptitle-style {
+  font-weight: bolder;
+  color: #3f51b5;
+  font-size:larger;
+  margin-bottom: 5%;
+}
+.divider-style{
+    border: 1px solid #3f51b5;
+margin-top: 5%;
+}

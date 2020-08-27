@@ -1,0 +1,8 @@
+package com.stackroute.userservice.configuration;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class JWTAuthenticationEntryPoint {
+
+}

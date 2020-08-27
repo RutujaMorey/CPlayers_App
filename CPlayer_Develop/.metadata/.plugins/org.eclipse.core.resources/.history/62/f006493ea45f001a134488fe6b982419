@@ -1,0 +1,15 @@
+package com.stackroute.userservice.controllers;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stackroute.userservice.dto.UserDTO;
+
+@RestController
+public class AuthenticateUserController {
+	
+	public ResponseEntity loginUser(@RequestBody UserDTO userDTO) {
+		
+	}
+
+}
